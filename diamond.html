@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .diamond {
+            position: absolute;
+            top: 40%;
+            left: 45%;
+            transform: translate(-40%, -45%);
+        }
+
+        .shared {
+            position: absolute;
+            border-style: solid;
+        }
+
+        .middle {
+            top: -40px;
+            left: 0;
+            border-width: 40px 50px;    /* top and bottom \ left and right */
+            border-color: transparent transparent #2a52be transparent;     /* top and bottom \ left and right */
+        }
+        .left1 {
+            top: 0;
+            left: -40px ;
+            border-width: 40px 50px 40px 40px;    /* top and bottom \ left and right */
+            border-color:   #00bfff transparent transparent  transparent;     /* top and bottom \ left and right */
+        }
+        .left2 {
+            top: -40px;
+            left: -70px ;
+            border-width: 40px 40px 40px 30px;    /* top and bottom \ left and right */
+            border-color:  transparent transparent #2a52be transparent;     /* top and bottom \ left and right */
+        }
+        .right1 {
+            top: 0;
+            right: -140px ;
+            border-width: 40px 40px 40px 50px;    /* top and bottom \ left and right */
+            border-color:  #00bfff transparent transparent  transparent;     /* top and bottom \ left and right */
+        }
+        .right2 {
+            top: -40px;
+            right: -170px ;
+            border-width: 40px 30px 40px 40px;    /* top and bottom \ left and right */
+            border-color:  transparent transparent #2a52be transparent;     /* top and bottom \ left and right */
+        }
+
+        .middle::before, .left2::before , .right2::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            border-style: solid;
+        }
+
+        .middle::before {
+            left: -50px;
+            border-width: 170px 50px 0 50px;
+            border-color: #0892d0 transparent transparent transparent;
+            z-index: 2;
+        }
+        .left2::before {
+            left: -7px;
+            border-width: 170px 10px 0 74px;
+            border-color: #00bfff transparent transparent transparent;
+            transform: skewX(15deg);
+        }
+        .right2::before {
+            right: -7px;
+            border-width: 170px 74px 0 10px;
+            border-color: #00bfff transparent transparent transparent;
+            transform: skewX(-15.5deg);
+        }
+
+    
+
+    </style>
+</head>
+<body>
+    <div class="diamond">
+        <div class="shared left1"></div>
+        <div class="shared left2"></div>
+        <div class="shared middle"></div>
+        <div class="shared right1"></div>
+        <div class="shared right2"></div>
+    </div>
+</body>
+</html>
